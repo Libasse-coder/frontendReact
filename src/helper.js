@@ -1,0 +1,1 @@
+export const proxy = "https://apinodemongo.onrender.com/"
