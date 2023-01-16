@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useMedicamentsContext } from "../hooks/useMedicamentsContext"
-import axios from 'axios';
 
 const MedicamentForm = () => {
 	const { dispatch } = useMedicamentsContext()
@@ -22,7 +21,7 @@ const MedicamentForm = () => {
 
 		const workout = {drug_name, medical_condition, side_effects, generic_name, drug_classes, brand_names, medical_condition_description, rating}
 
-		const response = await axios.fetch('https://apinodemongo.onrender.com/api/medicaments', {
+		const response = await fetch('/api/medicaments', {
 			method: 'POST',
 			body: JSON.stringify(workout),
 			headers: {
