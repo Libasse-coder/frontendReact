@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useMedicamentsContext } from "../hooks/useMedicamentsContext"
+import axios from 'axios';
 
 //components
 import MedicamentDetails from '../components/MedicamentDetails'
@@ -11,7 +12,7 @@ const Home = () => {
 	useEffect(() => {
 
 		const fetchWorkouts = async () => {
-			const response = await fetch('/api/medicaments')
+			const response = await axios.fetch('https://apinodemongo.onrender.com/api/medicaments')
 			const json = await response.json()
 
 			if (response.ok) {
