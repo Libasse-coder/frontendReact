@@ -1,12 +1,12 @@
 import { useMedicamentsContext } from '../hooks/useMedicamentsContext'
-
+import axios from 'axios';
 
 const MedicamentDetails = ({workout}) => {
 
 	const { dispatch } = useMedicamentsContext()
 	
 	const handleClick = async () => {
-		const response = await fetch('/api/medicaments/' + workout._id, {
+		const response = await axios.fetch('https://apinodemongo.onrender.com/api/medicaments/' + workout._id, {
 			method: 'DELETE'
 		})
 		const json = await response.json()
